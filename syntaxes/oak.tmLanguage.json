@@ -22,6 +22,9 @@
             "include": "#core_types"
         },
         {
+            "include": "#type_cast"
+        },
+        {
             "comment": "Attribute",
 			"name": "meta.attribute.oak",
 			"begin": "#\\!?\\[(\\w*)",
@@ -175,7 +178,22 @@
                     "name": "entity.name.type"
                 }
             }
-		},
+        },
+        "type_cast": {
+            "comment": "A type cast",
+            "match": "\\b(as)\\s*(&*)([A-Za-z][_A-Za-z0-9]*)\\b",
+            "captures": {
+                "1": {
+                    "name": "keyword.control"
+                },
+                "2": {
+                    "name": "keyword.operator.reference.oak"
+                },
+                "3": {
+                    "name": "entity.name.type"
+                }
+            }
+        },
         "line_comment": {
             "comment": "Single-line comment",
             "name": "comment.line.double-slash.oak",
