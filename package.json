@@ -1,0 +1,25 @@
+{
+    "name": "oak-syntax-highlighting",
+    "displayName": "oak-syntax-highlighting",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.48.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "oak",
+            "aliases": ["Oak", "oak"],
+            "extensions": [".ok"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "oak",
+            "scopeName": "source.oak",
+            "path": "./syntaxes/oak.tmLanguage.json"
+        }]
+    }
+}
