@@ -26,22 +26,7 @@
         },
         {
             "comment": "Attribute",
-			"name": "meta.attribute.oak",
-			"begin": "#\\!?\\[(\\w*)",
-			"end": "\\]",
-			"captures": {
-				"1": {
-					"name": "entity.name.function.attribute.rust"
-				}
-            },
-            "patterns": [
-                {
-                    "include": "#string_literal"
-                },
-                {
-                    "include": "#character_literal"
-                }
-            ]
+			"name": "meta.attribute.oak"
         },
 		{
 			"comment": "Type declaration",
@@ -99,7 +84,7 @@
         {
             "comment": "Keyword operators",
             "name": "keyword.operator.oak",
-            "match": "\\b(free|alloc|is_movable|sizeof)\\b"
+            "match": "\\b(free|alloc|is_movable|sizeof|is_defined)\\b"
         },
         {
             "comment": "Miscellaneous operator",
@@ -136,6 +121,15 @@
             }
         },
         {
+            "comment": "Namespace/Struct part",
+            "match": "\\b([_A-Za-z][_A-Za-z0-9]*)::",
+            "captures": {
+                "1": {
+                    "name": "entity.name.method"
+                }
+            }
+        },
+        {
             "comment": "Function definition",
             "begin": "\\b(fn)\\s+([_A-Za-z][_A-Za-z0-9]*|[_A-Za-z0-9]+)",
             "end": "\\{",
@@ -156,9 +150,12 @@
                 },
                 {
                     "comment": "Function return type",
-                    "match": "->\\s*([_A-Za-z][A-Za-z0-9_]*)\\b",
+                    "match": "->\\s*(&*)([_A-Za-z][A-Za-z0-9_]*)\\b",
                     "captures": {
                         "1": {
+                            "name": "keyword.operator.reference.oak"
+                        },
+                        "2": {
                             "name": "entity.name.type.oak"
                         }
                     }
@@ -181,7 +178,7 @@
         },
         "type_cast": {
             "comment": "A type cast",
-            "match": "\\b(as)\\s*(&*)([_A-Za-z][_A-Za-z0-9]*)\\b",
+            "match": "\\b(as)\\s+(&*)([_A-Za-z][_A-Za-z0-9]*)\\b",
             "captures": {
                 "1": {
                     "name": "keyword.control"
