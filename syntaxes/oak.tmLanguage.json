@@ -3,11 +3,11 @@
     "name": "Oak",
     "scopeName": "source.oak",
     "patterns": [
-		{
-			"include": "#line_comment"
-		},
-		{
-			"include": "#string_literal"
+        {
+            "include": "#line_comment"
+        },
+        {
+            "include": "#string_literal"
         },
         {
             "include": "#character_literal"
@@ -26,46 +26,46 @@
         },
         {
             "comment": "Attribute",
-			"name": "meta.attribute.oak"
+            "name": "meta.attribute.oak"
         },
-		{
-			"comment": "Type declaration",
-			"begin": "\\b(struct)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
-			"end": "[\\{\\(;]",
-			"beginCaptures": {
-				"1": {
-					"name": "storage.type.oak"
-				},
-				"2": {
-					"name": "entity.name.type.oak"
-				}
-			}
-		},
         {
-			"comment": "Floating point literal (fraction)",
-			"name": "constant.numeric.float.oak",
-			"match": "\\b[0-9][0-9_]*\\.[0-9][0-9_]*([eE][+-]?[0-9_]+)?(f32|f64)?\\b"
-		},
-		{
-			"comment": "Integer literal (decimal)",
-			"name": "constant.numeric.integer.decimal.oak",
-			"match": "\\b[0-9][0-9_]*([ui](8|16|32|64|128|s|size))?\\b"
-		},
-		{
-			"comment": "Integer literal (hexadecimal)",
-			"name": "constant.numeric.integer.hexadecimal.oak",
-			"match": "\\b0x[a-fA-F0-9_]+([ui](8|16|32|64|128|s|size))?\\b"
-		},
-		{
-			"comment": "Integer literal (octal)",
-			"name": "constant.numeric.integer.octal.oak",
-			"match": "\\b0o[0-7_]+([ui](8|16|32|64|128|s|size))?\\b"
-		},
-		{
-			"comment": "Integer literal (binary)",
-			"name": "constant.numeric.integer.binary.oak",
-			"match": "\\b0b[01_]+([ui](8|16|32|64|128|s|size))?\\b"
-		},
+            "comment": "Type declaration",
+            "begin": "\\b(struct)\\s+([a-zA-Z_][a-zA-Z0-9_]*)",
+            "end": "[\\{\\(;]",
+            "beginCaptures": {
+                "1": {
+                    "name": "storage.type.oak"
+                },
+                "2": {
+                    "name": "entity.name.type.oak"
+                }
+            }
+        },
+        {
+            "comment": "Floating point literal (fraction)",
+            "name": "constant.numeric.float.oak",
+            "match": "\\b[0-9][0-9_]*\\.[0-9][0-9_]*([eE][+-]?[0-9_]+)?(f32|f64)?\\b"
+        },
+        {
+            "comment": "Integer literal (decimal)",
+            "name": "constant.numeric.integer.decimal.oak",
+            "match": "\\b[0-9][0-9_]*([ui](8|16|32|64|128|s|size))?\\b"
+        },
+        {
+            "comment": "Integer literal (hexadecimal)",
+            "name": "constant.numeric.integer.hexadecimal.oak",
+            "match": "\\b0x[a-fA-F0-9_]+([ui](8|16|32|64|128|s|size))?\\b"
+        },
+        {
+            "comment": "Integer literal (octal)",
+            "name": "constant.numeric.integer.octal.oak",
+            "match": "\\b0o[0-7_]+([ui](8|16|32|64|128|s|size))?\\b"
+        },
+        {
+            "comment": "Integer literal (binary)",
+            "name": "constant.numeric.integer.binary.oak",
+            "match": "\\b0b[01_]+([ui](8|16|32|64|128|s|size))?\\b"
+        },
         {
             "comment": "Boolean constant",
             "name": "constant.language.boolean.oak",
@@ -164,8 +164,8 @@
         }
     ],
     "repository": {
-		"typed_identifier": {
-			"comment": "A typed identifier",
+        "typed_identifier": {
+            "comment": "A typed identifier",
             "match": "\\b[_A-Za-z][_A-Za-z0-9]*\\s*:\\s*(&*)([_A-Za-z][_A-Za-z0-9]*)\\b",
             "captures": {
                 "1": {
